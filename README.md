@@ -116,7 +116,7 @@ deploy your ErrorHandling smart contract is made easy with the following step-by
 
    > Open the File: Click on the newly created file to open the editor.
 
-   > Paste the Code: Copy the following ErrorHandling contract code ([(https://github.com/Ayushsaini123/-ETH-AVAX/blob/main/project%20code ).
+   > Paste the Code: Copy the following ErrorHandling contract code ( (https://github.com/Ayushsaini123/-ETH-AVAX/blob/main/project%20code) ).
 
 4. Compile the Contract
 
