@@ -11,14 +11,13 @@ Contract successfully uses revert() statements */
 contract ErrorHandling {
     address public user;
     uint256 public saving;
-
-    // Initialize the owner as the deployer and set balance to zero
+ 
     constructor() {
         user = msg.sender;
        saving = 0;
     }
 
-    // Function to deposit an amount, restricted to the owner
+   
     function deposit(uint256 amount) public {
         require(msg.sender == user, "Deposit failed ");
         require(amount > 0, "Amount must be positive");
@@ -26,7 +25,7 @@ contract ErrorHandling {
        saving += amount;
     }
 
-    // Function to withdraw an amount, ensuring balance remains non-negative
+   
     function withdraw(uint256 amount) public {
         require(msg.sender == user, "Withdraw failed ");
         require(amount <= saving, "insufficient balance");
@@ -34,8 +33,7 @@ contract ErrorHandling {
         saving -= amount;
         assert(saving >= 0);
     }
-
-    // Function for emergency withdrawal, with a custom error message
+ 
     function emergencyWithdraw(uint256 amount) public {
         require(msg.sender == user, "Emergency withdraw failed ");
 
@@ -46,15 +44,13 @@ contract ErrorHandling {
         saving-= amount;
     }
 
-    // Function to reset the contract's balance to zero
     function reset() public {
         require(msg.sender == user, "Reset failed ");
         
-        // Directly set the balance to zero, ignoring current saving
+   
        saving = 0;
     }
-
-    // Public view function to get the current saving
+ 
     function getBalance() public view returns (uint256) {
         return saving;
     }
